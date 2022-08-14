@@ -2,8 +2,10 @@ require 'benchmark'
 require_relative 'bubble_sort.rb'
 require_relative 'insertion_sort.rb'
 require_relative 'selection_sort.rb'
+require_relative 'instructor_algorithm.rb'
+require_relative 'algorithm_byme.rb'
 
-first_test = [3,6,12,4,2,-1,0,20,10,8,7,3,1,0,4,5,-23,2,3-2,-1,9,4,2,1,-0,5,19,4,99,2,-1,102,114,120,128,131,233,-123,199,999,-231,0,1,-45,763,-132,987,-132,831,-672]
+first_test = [3,6,12,4,2,-1,0,20,10,8,7,3,1,0,4,5,-23,2,3-2,-1,9,4,2,1,-0,5,19,4,99,2,-1,102,114,120,128,131,233,-123,199,999,-231,0,1,-45,763,-132,987,-132,831,-672, 1200, 56, 013, -23, 90, 921, -2, 100]
 
 Benchmark.bm do |x|
 	p "bubble_sort"
@@ -25,6 +27,14 @@ Benchmark.bm do |x|
 	p "selectioniv"
 	x.report("res: ") {
 		selection_sort_iv(first_test)
+	}
+	p "instructor_algorithm"
+	x.report("byJJ") {
+		byJJ(first_test)
+	}
+	p "mi algoritmo"
+	x.report("byme") {
+		my_algorithm(first_test)
 	}
 end
 
